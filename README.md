@@ -4,6 +4,29 @@ Browser userscript to improve semantics of [KdB](https://kdb.tsukuba.ac.jp/)
 
 **Mainly for students of University of Tsukuba**
 
+Hosted on [Greasy Fork](https://greasyfork.org/en/scripts/402059-kdb-enhanced)
+
+## How to use
+
+### Step 1
+
+To use user scripts you need to first install a user script manager. Which user script manager you can use depends on which browser you use.
+
+It should work in all the managers listed below, but only [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) in Chrome is tested.
+
+* Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) or [Violentmonkey](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag)
+* Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/), [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/), or [Violentmonkey](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+* Safari: [Tampermonkey](http://tampermonkey.net/?browser=safari)
+* Microsoft Edge: [Tampermonkey](https://www.microsoft.com/store/p/tampermonkey/9nblggh5162s)
+* Opera: [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/) or [Violentmonkey](https://addons.opera.com/extensions/details/violent-monkey/)
+* Maxthon: [Violentmonkey](http://extension.maxthon.com/detail/index.php?view_id=1680)
+* Dolphin: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.dolphin)
+* UC: [Tampermonkey](https://play.google.com/store/apps/details?id=net.tampermonkey.uc)
+
+### Step 2
+
+Go to [Greasy Fork](https://greasyfork.org/en/scripts/402059-kdb-enhanced). Click the green install button on the page, and your user script manager will ask you to confirm the install.
+
 ## License
 
 MIT License
