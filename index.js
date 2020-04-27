@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.2
+// @version      1.3
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
@@ -84,6 +84,7 @@
 
   const observeTable = () => {
     const tableBody = document.getElementById("ut-SB0070-list-body")
+    tableBody.style.overflowX = "hidden"
     const observer = new MutationObserver(() => {
       changeTagOfTitle()
       changeTagOfSummary()
