@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.0
+// @version      1.1
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
@@ -16,6 +16,8 @@
     changeTagOfBtn("btnPrev")
     changeTagOfBtn("btnNext")
     changeTagOfBtn("btnEnd")
+
+    setShortcuts()
   }
 
   const changeTagOfBtn = id => {
@@ -32,5 +34,18 @@
     btnNew.addEventListener("click", () => {
       btn.click()
     })
+  }
+
+  const setShortcuts = () => {
+    window.onkeydown = e => {
+      switch (e.key) {
+        case "ArrowRight":
+          document.getElementById("btnNext").click()
+          break
+        case "ArrowLeft":
+          document.getElementById("btnPrev").click()
+          break
+      }
+    }
   }
 })();
