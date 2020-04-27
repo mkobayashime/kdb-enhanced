@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.1
+// @version      1.2
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
@@ -18,6 +18,8 @@
     changeTagOfBtn("btnEnd")
 
     setShortcuts()
+
+    observeTable()
   }
 
   const changeTagOfBtn = id => {
@@ -36,6 +38,37 @@
     })
   }
 
+  const changeTagOfTitle = () => {
+    const titles = Array.from(document.getElementsByClassName("ut-title"))
+    titles.forEach(title => {
+      if (title.parentNode.className.indexOf("ut-preview-syllabus") !== -1) {
+        const titleNew = document.createElement("a")
+        titleNew.className = title.className
+        titleNew.setAttribute("style", title.getAttribute("style"))
+        titleNew.style.display = "block"
+        titleNew.style.color = "inherit"
+        titleNew.innerHTML = title.innerHTML
+        title.parentNode.insertBefore(titleNew, title)
+        title.remove()
+      }
+    })
+  }
+
+  const changeTagOfSummary = () => {
+    const summaries = Array.from(document.getElementsByClassName("ut-body"))
+    summaries.forEach(summary => {
+      if (summary.parentNode.className.indexOf("ut-clickable") !== -1) {
+        const summaryNew = document.createElement("a")
+        summaryNew.className = summary.className
+        summaryNew.setAttribute("style", summary.getAttribute("style"))
+        summaryNew.style.display = "block"
+        summaryNew.innerHTML = summary.innerHTML
+        summary.parentNode.insertBefore(summaryNew, summary)
+        summary.remove()
+      }
+    })
+  }
+
   const setShortcuts = () => {
     window.onkeydown = e => {
       switch (e.key) {
@@ -47,5 +80,16 @@
           break
       }
     }
+  }
+
+  const observeTable = () => {
+    const tableBody = document.getElementById("ut-SB0070-list-body")
+    const observer = new MutationObserver(() => {
+      changeTagOfTitle()
+      changeTagOfSummary()
+    })
+    observer.observe(tableBody, {
+      childList: true
+    })
   }
 })();
