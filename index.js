@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.4
+// @version      1.5
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
@@ -70,19 +70,24 @@
   }
 
   const setShortcuts = () => {
+    const inputDoms = Array.from(document.querySelectorAll("input, select")).slice(8, 15)
+
     window.onkeydown = e => {
       switch (e.key) {
         case "ArrowRight":
           document.getElementById("btnNext").click()
           break
+        case "l":
+          document.getElementById("btnNext").click()
+          break
         case "ArrowLeft":
           document.getElementById("btnPrev").click()
           break
+        case "j":
+          document.getElementById("btnPrev").click()
+          break
       }
-    }
 
-    const inputDoms = Array.from(document.querySelectorAll("input, select")).slice(8, 15)
-    window.onkeydown = e => {
       if (e.ctrlKey && e.key === "Enter") {
         if (inputDoms.includes(document.activeElement)) {
           document.getElementById("btnSearch").click()
