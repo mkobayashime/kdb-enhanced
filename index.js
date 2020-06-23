@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.5
+// @version      1.6
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
