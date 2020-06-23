@@ -83,7 +83,7 @@
         case "ArrowLeft":
           document.getElementById("btnPrev").click()
           break
-        case "j":
+        case "h":
           document.getElementById("btnPrev").click()
           break
       }
