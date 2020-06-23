@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         KdB Enhanced
 // @namespace    https://kdb.tsukuba.ac.jp/
-// @version      1.3
+// @version      1.4
 // @description  Browser userscript to improve semantics of KdB
 // @author       @m_kobayashi_me  https://twitter.com/m_kobayashi_me
 // @match        https://kdb.tsukuba.ac.jp/*
 // @grant        none
 // ==/UserScript==
 
-(function() {
-  'use strict';
+(function () {
+  "use strict"
 
   window.onload = () => {
     changeTagOfBtn("btnFirst")
@@ -78,6 +78,15 @@
         case "ArrowLeft":
           document.getElementById("btnPrev").click()
           break
+      }
+    }
+
+    const inputDoms = Array.from(document.querySelectorAll("input, select")).slice(8, 15)
+    window.onkeydown = e => {
+      if (e.ctrlKey && e.key === "Enter") {
+        if (inputDoms.includes(document.activeElement)) {
+          document.getElementById("btnSearch").click()
+        }
       }
     }
   }
